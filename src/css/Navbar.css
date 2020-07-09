@@ -1,0 +1,44 @@
+#navbar {
+  height: 45px;
+  background-color: rgb(97, 3, 160);
+  text-align: center;
+}
+
+#brand-tab {
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+  height: 50.5px;
+  margin-bottom: 10px;
+}
+
+#brand-tab:hover {
+  letter-spacing: 5px;
+  transition-duration: 1s;
+  background-color: rgb(135, 16, 214);
+}
+
+#navbar-tabs {
+  margin-left: 75%;
+}
+
+#campuses-tab {
+  color: white;
+  margin-right: 10%;
+  font-size: 20px;
+  letter-spacing: 2.5px;
+}
+
+#students-tab {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 2.5px;
+}
+
+#campuses-tab:hover,
+#students-tab:hover {
+  background-color: rgb(135, 16, 214);
+  margin-bottom: 0.05px;
+  letter-spacing: 3.5px;
+  transition-duration: 0.75s;
+}
