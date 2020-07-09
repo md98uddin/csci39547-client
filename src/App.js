@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { fetchAllCampuses, updateAllCampusesToState } from "./redux/dispatches";
 import HomePage from "./components/HomePage";
 import Navbar from "./components/commons/Navbar";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
+  async componentDidMount() {
+    await this.props.fetchAllCampuses();
+    await this.props.updateAllCampusesToState();
   }
-
   render() {
+    console.log("props", this.props);
     return (
       <div>
         <Navbar />
@@ -22,4 +23,18 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    campuses: state.campuses,
+    isLoading: state.isLoading,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAllCampuses: () => dispatch(fetchAllCampuses()),
+    updateAllCampusesToState: () => dispatch(updateAllCampusesToState()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
