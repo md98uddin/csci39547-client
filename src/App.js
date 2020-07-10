@@ -3,7 +3,10 @@ import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchAllCampuses, updateAllCampusesToState } from "./redux/dispatches";
 import HomePage from "./components/HomePage";
+import CampusesListing from "./components/CampusesListing";
+import StudentsListing from "./components/StudentsListing";
 import Navbar from "./components/commons/Navbar";
+import studentsListing from "./components/StudentsListing";
 
 class App extends Component {
   async componentDidMount() {
@@ -17,6 +20,8 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/campuses" component={CampusesListing} />
+          <Route exact path="/students" component={StudentsListing} />
         </Switch>
       </div>
     );
