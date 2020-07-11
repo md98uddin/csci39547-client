@@ -8,4 +8,4 @@ export {
     fetchStudent,
     addStudent,
     removeStudent,
-} from "./actions/studentsActions"
+} from "./actions/studentsActions";

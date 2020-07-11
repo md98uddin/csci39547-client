@@ -23,15 +23,17 @@ export const fetchStudent = (id) => {
     };
 };
 
-export const addStudent = () => {
+export const addStudent = (student) => {
     return {
         type: ADD_A_STUDENT,
+        payload: student
     };
 };
 
 
-export const removeStudent = () => {
+export const removeStudent = (id) => {
     return {
         type: REMOVE_A_STUDENT,
+        payload: id
     };
 };
