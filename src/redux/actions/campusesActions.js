@@ -8,6 +8,7 @@ import {
   REMOVE_A_CAMPUS,
   CALL_API_TO_REMOVE_CAMPUS,
 } from "../types/campusesTypes";
+import Axios from "axios";
 
 export const fetchAllCampuses = () => {
   return {
@@ -15,9 +16,21 @@ export const fetchAllCampuses = () => {
   };
 };
 
-export const updateAllCampusesToState = () => {
+export const updateAllCampusesToState = (campuses) => {
   return {
     type: UPDATE_CAMPUSES_TO_STATE,
+    payload: campuses,
+  };
+};
+
+//API Call for the above types
+export const fetchCampuses = () => {
+  return (dispatch) => {
+    dispatch(fetchAllCampuses());
+
+    Axios.get("https://moj-api.herokuapp.com/debits").then((res) => {
+      dispatch(updateAllCampusesToState(res.data));
+    });
   };
 };
 

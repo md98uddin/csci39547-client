@@ -18,15 +18,12 @@ const campusesReducers = (state = initialState, action) => {
         isLoading: true,
       };
     case UPDATE_CAMPUSES_TO_STATE:
-      Axios.get("https://moj-api.herokuapp.com/debits").then((res) => {
-        console.log("data", res.data);
-        return {
-          ...state,
-          campuses: res.data,
-          isLoading: false,
-        };
-      });
-      break;
+      return {
+        ...state,
+        campuses: action.payload,
+        currentCampus: null,
+        isLoading: false,
+      };
     default:
       return state;
   }

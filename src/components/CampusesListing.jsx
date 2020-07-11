@@ -1,10 +1,39 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchCampuses } from "../redux/actions/campusesActions";
+import Loader from "./commons/Loader";
 
 class CampusesListing extends Component {
-    state = {};
-    render() {
-        return <p>Hello World</p>;
-    }
+  componentDidMount() {
+    this.props.onFetchCampuses();
+  }
+  render() {
+    console.log("props", this.props);
+
+    return !this.props.campuses ? (
+      <h>Campuses load</h>
+    ) : (
+      <div id="loader">
+        <Loader />
+      </div>
+    );
+  }
 }
 
-export default CampusesListing;
+const mapStateToProps = (state) => {
+  return {
+    campuses: state.campuses,
+    currentCampus: state.currentCampus,
+    isLoading: state.isLoading,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchCampuses: () => {
+      dispatch(fetchCampuses());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CampusesListing);
