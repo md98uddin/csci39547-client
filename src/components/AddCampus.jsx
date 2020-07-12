@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addACampus } from "../redux/actions/campusesActions";
@@ -74,3 +75,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCampus);
+

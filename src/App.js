@@ -7,6 +7,7 @@ import Navbar from "./components/commons/Navbar";
 import AddCampus from "./components/AddCampus";
 
 class App extends Component {
+
   render() {
     return (
       <div>
@@ -20,6 +21,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default App;

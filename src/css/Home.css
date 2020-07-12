@@ -1,0 +1,43 @@
+#container {
+    text-align: center;
+    color: rgb(92, 13, 92);
+}
+
+#title-header {
+    margin-top: 2%;
+    font-size: 30px;
+}
+
+.card {
+    height: 15vh;
+}
+
+.school-image {
+    margin-top: 3%;
+}
+
+#social-icons {
+    margin-top: 2%;
+}
+
+.fa {
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #3e70db;
+    color: white;
+}
+
+.fa-google {
+    background: #f74842;
+    color: white;
+}

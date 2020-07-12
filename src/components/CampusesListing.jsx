@@ -7,6 +7,7 @@ import EmptyDataMessage from "./commons/EmptyDataMessage";
 import { Link } from "react-router-dom";
 
 class CampusesListing extends Component {
+
   componentDidMount() {
     this.props.onFetchCampuses();
   }
@@ -61,22 +62,23 @@ class CampusesListing extends Component {
       </div>
     );
   }
+
 }
 
 const mapStateToProps = (state) => {
-  return {
-    campuses: state.campuses,
-    currentCampus: state.currentCampus,
-    isLoading: state.isLoading,
-  };
+    return {
+        campuses: state.campuses,
+        currentCampus: state.currentCampus,
+        isLoading: state.isLoading,
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    onFetchCampuses: () => {
-      dispatch(fetchCampuses());
-    },
-  };
+    return {
+        onFetchCampuses: () => {
+            dispatch(fetchCampuses());
+        },
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampusesListing);
