@@ -1,10 +1,11 @@
-
 #no-campus {
   text-align: center;
   margin-top: 12%;
   color: rgb(92, 13, 92);
   font-size: 40px;
   letter-spacing: 3px;
+  width: 1000px;
+  margin-left: 40px;
 }
 
 #success-msg {
@@ -44,4 +45,3 @@
   color: white;
   background-color: blueviolet;
 }
-

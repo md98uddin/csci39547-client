@@ -13,6 +13,12 @@ export const ADD_A_CAMPUS = "ADD_A_CAMPUS";
 export const CALL_API_TO_ADD_CAMPUS = "CALL_API_TO_ADD_CAMPUS";
 export const ON_ADD_SUCCESS = "ON_ADD_SUCCESS";
 
+//these types will edit a campus
+export const EDIT_A_CAMPUS = "EDIT_A_CAMPUS";
+export const CALL_API_TO_EDIT_CAMPUS = "CALL_API_TO_EDIT_CAMPUS";
+export const ON_EDIT_SUCCESS = "ON_EDIT_SUCCESS";
+
 //these types will remove a campus
 export const REMOVE_A_CAMPUS = "REMOVE_A_CAMPUS";
 export const CALL_API_TO_REMOVE_CAMPUS = "CALL_API_TO_REMOVE_CAMPUS";
+export const ON_REMOVE_SUCCESS = "ON_REMOVE_SUCCESS";

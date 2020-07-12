@@ -8,6 +8,10 @@ import {
   ON_ADD_SUCCESS,
   REMOVE_A_CAMPUS,
   CALL_API_TO_REMOVE_CAMPUS,
+  ON_REMOVE_SUCCESS,
+  EDIT_A_CAMPUS,
+  CALL_API_TO_EDIT_CAMPUS,
+  ON_EDIT_SUCCESS,
 } from "../types/campusesTypes";
 import Axios from "axios";
 
@@ -73,8 +77,63 @@ export const addACampus = (obj) => {
     Axios.post("http://localhost:5000/campuses/add", obj).then((res) => {
       dispatch(addCampustoDb());
     });
-    setTimeout(() => dispatch(addCampusSuccess()), 3000);
+    setTimeout(() => dispatch(addCampusSuccess()), 2000);
   };
-
 };
 
+export const EditCampus = () => {
+  return {
+    type: EDIT_A_CAMPUS,
+  };
+};
+
+export const updateCampustoDb = () => {
+  return {
+    type: CALL_API_TO_EDIT_CAMPUS,
+  };
+};
+
+export const onEditSuccess = () => {
+  return {
+    type: ON_EDIT_SUCCESS,
+  };
+};
+
+//call API to edit
+export const EditACampus = (id, obj) => {
+  return (dispatch) => {
+    dispatch(EditCampus());
+    Axios.put(`http://localhost:5000/campuses/edit/${id}`, obj).then(() => {
+      dispatch(updateCampustoDb());
+    });
+    setTimeout(() => dispatch(onEditSuccess()), 2000);
+  };
+};
+
+export const RemoveCampus = () => {
+  return {
+    type: REMOVE_A_CAMPUS,
+  };
+};
+
+export const RemoveCampusFromDb = () => {
+  return {
+    type: CALL_API_TO_REMOVE_CAMPUS,
+  };
+};
+
+export const onRemoveSuccess = () => {
+  return {
+    type: ON_REMOVE_SUCCESS,
+  };
+};
+
+export const RemoveACampus = (id) => {
+  return (dispatch) => {
+    dispatch(RemoveCampus());
+    Axios.delete(`http://localhost:5000/campuses/remove/${id}`).then(() => {
+      dispatch(RemoveCampusFromDb());
+    });
+    setTimeout(() => dispatch(onRemoveSuccess()), 2000);
+  };
+};

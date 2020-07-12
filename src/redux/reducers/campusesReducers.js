@@ -4,6 +4,12 @@ import {
   ADD_A_CAMPUS,
   CALL_API_TO_ADD_CAMPUS,
   ON_ADD_SUCCESS,
+  REMOVE_A_CAMPUS,
+  CALL_API_TO_REMOVE_CAMPUS,
+  ON_REMOVE_SUCCESS,
+  EDIT_A_CAMPUS,
+  CALL_API_TO_EDIT_CAMPUS,
+  ON_EDIT_SUCCESS,
 } from "../types/campusesTypes";
 
 const initialState = {
@@ -36,6 +42,39 @@ const campusesReducers = (state = initialState, action) => {
         isLoading: false,
       };
     case ON_ADD_SUCCESS:
+      return {
+        ...state,
+        addSuccessMsg: null,
+      };
+    case EDIT_A_CAMPUS:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case CALL_API_TO_EDIT_CAMPUS:
+      return {
+        ...state,
+        isLoading: false,
+        addSuccessMsg: "Campus was edited!",
+      };
+    case ON_EDIT_SUCCESS:
+      return {
+        ...state,
+        addSuccessMsg: null,
+      };
+    case REMOVE_A_CAMPUS:
+      return {
+        ...state,
+        isLoading: true,
+        addSuccessMsg: null,
+      };
+    case CALL_API_TO_REMOVE_CAMPUS:
+      return {
+        ...state,
+        isLoading: false,
+        addSuccessMsg: "Campus was removed!",
+      };
+    case ON_REMOVE_SUCCESS:
       return {
         ...state,
         addSuccessMsg: null,
