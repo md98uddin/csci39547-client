@@ -75,4 +75,6 @@ export const addACampus = (obj) => {
     });
     setTimeout(() => dispatch(addCampusSuccess()), 3000);
   };
+
 };
+
