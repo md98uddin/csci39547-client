@@ -8,9 +8,10 @@ const initialState = {
   campuses: null,
   currentCampus: null,
   isLoading: false,
+  testing1: ""
 };
 
-const campusesReducers = (state = initialState, action) => {
+const campusesReducers = (state= initialState, action) => {
   switch (action.type) {
     case START_FETCHING_CAMPUSES:
       return {
