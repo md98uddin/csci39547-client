@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage";
 import CampusesListing from "./components/CampusesListing";
 import StudentsListing from "./components/StudentsListing";
 import Navbar from "./components/commons/Navbar";
+import AddCampus from "./components/AddCampus";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/campuses" component={CampusesListing} />
           <Route exact path="/students" component={StudentsListing} />
+          <Route exact path="/campus/add" component={AddCampus} />
         </Switch>
       </div>
     );
