@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk } from "../../thunks";
 import SingleStudent from "./SingleStudent";
 import {fetchStudentThunk} from "../redux/reducers/studentReducers";
 

@@ -5,6 +5,7 @@ import {
   UPDATE_CAMPUS_TO_STATE,
   ADD_A_CAMPUS,
   CALL_API_TO_ADD_CAMPUS,
+  ON_ADD_SUCCESS,
   REMOVE_A_CAMPUS,
   CALL_API_TO_REMOVE_CAMPUS,
 } from "../types/campusesTypes";
@@ -28,7 +29,7 @@ export const fetchCampuses = () => {
   return (dispatch) => {
     dispatch(fetchAllCampuses());
 
-    Axios.get("https://moj-api.herokuapp.com/debits").then((res) => {
+    Axios.get("http://localhost:5000/campuses").then((res) => {
       dispatch(updateAllCampusesToState(res.data));
     });
   };
@@ -47,10 +48,31 @@ export const updateCampusToState = () => {
   };
 };
 
-export const addCampus = (campus) => {
+export const addCampus = () => {
   return {
     type: ADD_A_CAMPUS,
   };
 };
 
-export const addCampustoDb = () => {};
+export const addCampustoDb = () => {
+  return {
+    type: CALL_API_TO_ADD_CAMPUS,
+  };
+};
+
+export const addCampusSuccess = () => {
+  return {
+    type: ON_ADD_SUCCESS,
+  };
+};
+
+//api to add a campus
+export const addACampus = (obj) => {
+  return (dispatch) => {
+    dispatch(addCampus());
+    Axios.post("http://localhost:5000/campuses/add", obj).then((res) => {
+      dispatch(addCampustoDb());
+    });
+    setTimeout(() => dispatch(addCampusSuccess()), 3000);
+  };
+};
