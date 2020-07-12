@@ -9,3 +9,5 @@ export const FETCH_A_STUDENT = "FETCH_A_STUDENT"
 export const ADD_A_STUDENT = "ADD_A_STUDENT"
 export const REMOVE_A_STUDENT = "REMOVE_A_STUDENT"
 
+export const TEST_FUNCTION = "TEST_FUNCTION"
+

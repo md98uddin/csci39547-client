@@ -5,18 +5,22 @@ import {
     FETCH_A_STUDENT,
     FETCH_ALL_STUDENTS,
     ADD_A_STUDENT,
-    REMOVE_A_STUDENT
+    REMOVE_A_STUDENT,
+    TEST_FUNCTION
 } from "../types/studentTypes";
 
 
 
 import {fetchAllStudents} from "../dispatches";
-import {fetchStudent, removeStudent} from "../actions/studentsActions";
+import {fetchStudent, removeStudent, testing} from "../actions/studentsActions";
+
+
 
 const initialState = {
     students: null,
     currentStudent: null,
-    isLoading: false
+    isLoading: false,
+    testing1: ""
 }
 
 
@@ -51,7 +55,9 @@ export function removeStudentThunk(id) {
 
 
 
-function AllStudentsReducer(state = [], action){
+
+
+function AllStudentsReducer(state = initialState, action){
     switch (action.type) {
         case FETCH_ALL_STUDENTS:
             return action.payload
@@ -59,6 +65,13 @@ function AllStudentsReducer(state = [], action){
             return [...state, action.payload];
         case REMOVE_A_STUDENT:
             return state.filter(student => student.id != action.payload);
+        case TEST_FUNCTION:
+            return {
+                ...state,
+                testing1: action.payload
+            }
+        default:
+            return state;
 
     }
 }
