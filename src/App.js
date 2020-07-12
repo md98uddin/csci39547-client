@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CampusesListing from "./components/CampusesListing";
+import StudentsListingContainer from "./components/StudentsListingContainer";
 import Navbar from "./components/commons/Navbar";
 import AddCampus from "./components/AddCampus";
 
@@ -13,7 +14,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/campuses" component={CampusesListing} />
-          {/* <Route exact path="/students" component={StudentsListing} /> */}
+          <Route exact path="/students" component={StudentsListingContainer} />
           <Route exact path="/campus/add" component={AddCampus} />
         </Switch>
       </div>
