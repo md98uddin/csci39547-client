@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import Link from "react-router-dom/modules/Link";
-
-const Students = (props) => {
+ import React, { Component } from "react";
+ import {Link} from "react-router-dom";
+//
+ const Students = (props) => {
     return (
       <div>
             {props.allStudents.map((student) => (
@@ -16,7 +16,7 @@ const Students = (props) => {
 
 
     );
-};
+ };
 
-export default Students;
+ export default Students;
 
