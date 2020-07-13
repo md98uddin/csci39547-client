@@ -8,9 +8,14 @@ import {
     FETCH_A_STUDENT,
     FETCH_ALL_STUDENTS,
     ADD_A_STUDENT,
-    REMOVE_A_STUDENT,
+    REMOVE_A_STUDENT, UPDATE_STUDENT_TO_STATE,
 } from "../types/studentTypes";
-import {CALL_API_TO_EDIT_CAMPUS, FETCH_A_CAMPUS, UPDATE_CAMPUSES_TO_STATE} from "../types/campusesTypes";
+import {
+    CALL_API_TO_EDIT_CAMPUS,
+    FETCH_A_CAMPUS,
+    UPDATE_CAMPUS_TO_STATE,
+    UPDATE_CAMPUSES_TO_STATE
+} from "../types/campusesTypes";
 import Axios from "axios";
 import {fetchAllCampuses, updateAllCampusesToState} from "./campusesActions";
 
@@ -22,10 +27,10 @@ export const fetchAllStudents = () => {
 };
 
 
-export const fetchStudent = (id) => {
+export const fetchStudent = () => {
     return {
         type: FETCH_A_STUDENT,
-        payload: id,
+
     };
 };
 
@@ -47,6 +52,13 @@ export const removeStudent = (id) => {
     return {
         type: REMOVE_A_STUDENT,
         payload: id
+    };
+};
+
+export const updateStudentToState = (student) => {
+    return {
+        type: UPDATE_STUDENT_TO_STATE,
+        payload: student,
     };
 };
 
