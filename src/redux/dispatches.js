@@ -5,8 +5,8 @@ export {
 
 export {
   fetchAllStudents,
-    fetchStudent,
-    addStudent,
-    removeStudent,
-    updateAllStudentsToState
+  fetchStudent,
+  addStudent,
+  removeStudent,
+  updateAllStudentsToState,
 } from "./actions/studentsActions";
