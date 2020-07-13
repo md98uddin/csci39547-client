@@ -8,4 +8,5 @@ export {
     fetchStudent,
     addStudent,
     removeStudent,
+    updateAllStudentsToState
 } from "./actions/studentsActions";
