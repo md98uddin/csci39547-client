@@ -1,2 +1,2 @@
-export { default as isLoading } from "./campusesReducers";
-export { default as students } from "./studentReducers";
+export { default as Campuses } from "./campusesReducers";
+export { default as Students } from "./studentReducers";

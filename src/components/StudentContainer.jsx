@@ -19,7 +19,7 @@ class StudentContainer extends Component {
 
 const mapState = (state) => {
     return {
-        student: state.student
+        student: state.Students.students
     };
 };
 

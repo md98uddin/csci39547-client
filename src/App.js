@@ -7,19 +7,20 @@ import Navbar from "./components/commons/Navbar";
 import AddCampus from "./components/AddCampus";
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/campuses" component={CampusesListing} />
-          <Route exact path="/students" component={StudentsListingContainer} />
-          <Route exact path="/campus/add" component={AddCampus} />
-        </Switch>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Navbar />
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/campuses" component={CampusesListing} />
+                    <Route exact path="/students" component={StudentsListingContainer} />
+                    {/*<Route exact path="/students/add component={AddStudent}/>*/}
+                    <Route exact path="/campus/add" component={AddCampus} />
+                </Switch>
+            </div>
+        );
+    }
 }
 
 export default App;

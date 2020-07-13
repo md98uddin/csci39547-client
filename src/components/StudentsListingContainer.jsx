@@ -1,41 +1,43 @@
   import React, { Component } from "react";
   import { connect } from "react-redux";
-// import {fetchAllStudents} from "../redux/actions/studentsActions";
 // // import {fetchAllStudentsThunk, removeStudentThunk} from "../redux/reducers/studentReducers";
  import Students from "./Students";
-//
-//
- class StudentsListingContainer extends Component {
-//
+ import {fetchAllStudentsThunk} from "../redux/reducers/studentReducers";
 
-    componentDidMount() {
-        this.props.fetchAllStudents();
+ class StudentsListingContainer extends Component {
+
+
+     componentDidMount() {
+        console.log("reaches here");
+        this.props.FetchAllStudentsThunk();
+
     }
 
     render() {
 
-
+         if(!this.props.campuses){
+             return <div>
+                 <h1>nothing yet</h1>
+             </div>
+         }
 
        return (
+
                     <Students
                         allStudents = {this.props.allStudents}
-                    ></Students>
+                        isLoading = {this.props.isLoading}
+                     />
 
        )
-
-
-
-
-
-
-
 
     }
  };
 
 function mapState(state) {
     return {
-         allStudents: state.students
+        allStudents: state.Students.students,
+        isLoading: state.Students.isLoading,
+        currentStudent: state.Students.currentStudent,
 
     }
 }
@@ -44,14 +46,13 @@ function mapDispatch(dispatch) {
     return {
         // fetchAllStudents: () => dispatch(fetchAllStudentsThunk()),
         // removeAStudent: (id) => dispatch(removeStudentThunk(id))
-        fetchAllStudents: () => {
+        FetchAllStudentsThunk: () => {
 
-          //  dispatch(fetchAllStudents());
+            dispatch(fetchAllStudentsThunk());
+
         }
     }
  }
 
 export default connect(mapState, mapDispatch)(StudentsListingContainer);
-//
-// export default StudentsListingContainer;
-//
+
