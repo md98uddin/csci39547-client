@@ -84,12 +84,13 @@ class EditCampus extends Component {
           onClick={() =>
             this.onEditSubmit(this.props.currentCampus.id, this.state)
           }
+          id="edit-btn"
         >
           SAVE EDIT
         </button>
       </div>
     ) : (
-      <div className="container">
+      <div id="loader">
         <Loader />
       </div>
     );
