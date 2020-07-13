@@ -5,22 +5,24 @@ import CampusesListing from "./components/CampusesListing";
 import StudentsListingContainer from "./components/StudentsListingContainer";
 import Navbar from "./components/commons/Navbar";
 import AddCampus from "./components/AddCampus";
+import EditCampus from "./components/EditCampus";
 
 class App extends Component {
-    render() {
-        return (
-            <div>
-                <Navbar />
-                <Switch>
-                    <Route exact path="/" component={HomePage} />
-                    <Route exact path="/campuses" component={CampusesListing} />
-                    <Route exact path="/students" component={StudentsListingContainer} />
-                    {/*<Route exact path="/students/add component={AddStudent}/>*/}
-                    <Route exact path="/campus/add" component={AddCampus} />
-                </Switch>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/campuses" component={CampusesListing} />
+          <Route exact path="/students" component={StudentsListingContainer} />
+          {/*<Route exact path="/students/add component={AddStudent}/>*/}
+          <Route exact path="/campus/add" component={AddCampus} />
+          <Route exact path="/campus/edit/:name/:id" component={EditCampus} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;

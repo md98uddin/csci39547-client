@@ -1,4 +1,3 @@
-
 import {
   START_FETCHING_CAMPUSES,
   UPDATE_CAMPUSES_TO_STATE,
@@ -13,6 +12,7 @@ import {
   EDIT_A_CAMPUS,
   CALL_API_TO_EDIT_CAMPUS,
   ON_EDIT_SUCCESS,
+  ON_FETCH_SUCCESS,
 } from "../types/campusesTypes";
 import Axios from "axios";
 
@@ -40,16 +40,33 @@ export const fetchCampuses = () => {
   };
 };
 
-export const fetchCampus = (id) => {
+export const fetchCampus = () => {
   return {
     type: FETCH_A_CAMPUS,
-    payload: id,
   };
 };
 
-export const updateCampusToState = () => {
+export const updateCampusToState = (campus) => {
   return {
     type: UPDATE_CAMPUS_TO_STATE,
+    payload: campus,
+  };
+};
+
+export const onFetchSuccess = () => {
+  return {
+    type: ON_FETCH_SUCCESS,
+  };
+};
+
+//this will fetch a single campus
+export const FetchACampus = (id) => {
+  return (dispatch) => {
+    dispatch(fetchCampus());
+    Axios.get(`http://localhost:5000/campuses/${id}`).then((res) => {
+      dispatch(updateCampusToState(res.data));
+    });
+    dispatch(onFetchSuccess());
   };
 };
 

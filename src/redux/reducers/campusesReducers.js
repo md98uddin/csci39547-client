@@ -10,6 +10,9 @@ import {
   EDIT_A_CAMPUS,
   CALL_API_TO_EDIT_CAMPUS,
   ON_EDIT_SUCCESS,
+  FETCH_A_CAMPUS,
+  UPDATE_CAMPUS_TO_STATE,
+  ON_FETCH_SUCCESS,
 } from "../types/campusesTypes";
 
 const initialState = {
@@ -45,6 +48,21 @@ const campusesReducers = (state = initialState, action) => {
       return {
         ...state,
         addSuccessMsg: null,
+      };
+    case FETCH_A_CAMPUS:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case UPDATE_CAMPUS_TO_STATE:
+      return {
+        ...state,
+        currentCampus: action.payload,
+      };
+    case ON_FETCH_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
       };
     case EDIT_A_CAMPUS:
       return {

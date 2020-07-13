@@ -5,8 +5,8 @@ export const UPDATE_CAMPUSES_TO_STATE = "ADD_CAMPUSES_TO_STATE";
 //these types will fetch a single campus based on
 //whichever clicked by user
 export const FETCH_A_CAMPUS = "FETCH_A_CAMPUS";
-export const FETCH_ALL_CAMPUSES = "FETCH_ALL_CAMPUSES";
 export const UPDATE_CAMPUS_TO_STATE = "UPDATE_CAMPUS_TO_STATE";
+export const ON_FETCH_SUCCESS = "ON_FETCH_SUCCESS";
 
 //these types will add a new campus to database
 export const ADD_A_CAMPUS = "ADD_A_CAMPUS";

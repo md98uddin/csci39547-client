@@ -1,0 +1,18 @@
+#edit-main {
+  text-align: center;
+  margin-top: 6%;
+}
+
+.input {
+  width: 250px;
+  height: 40px;
+  border: solid;
+  border-width: 5px;
+  border-color: rebeccapurple;
+}
+
+.label {
+  font-size: 20px;
+  color: rebeccapurple;
+  letter-spacing: 2px;
+}
