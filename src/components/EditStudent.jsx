@@ -14,8 +14,6 @@ class EditStudent extends Component {
         image_url: "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
     };
 
-
-
     changeFirstName = (e) => {
         var text = e.target.value;
         this.setState({
