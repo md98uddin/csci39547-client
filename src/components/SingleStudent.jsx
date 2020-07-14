@@ -25,7 +25,9 @@ const SingleStudent = (props) => {
 
                 </h5>
                 <p>email: {props.student.email}</p>
-                <p>{props.student.CampusId}</p>
+                <Link to={`/studentcampus/${props.student.CampusId}`} >
+                 <p>CampusId: {props.student.CampusId}</p>
+                </Link>
                 <p className="card-text">gpa: {props.student.gpa}</p>
 
                     <button

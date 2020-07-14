@@ -8,6 +8,7 @@ import EditCampus from "./components/EditCampus";
 import EditStudent from "./components/EditStudent";
 import StudentsListing from "./components/StudentsListing";
 import StudentContainer from "./components/StudentContainer";
+import SingleStudentCampus from "./components/SingleStudentCampus";
 import AddStudent from "./components/AddStudent";
 
 class App extends Component {
@@ -20,12 +21,13 @@ class App extends Component {
                     <Route exact path="/campuses" component={CampusesListing} />
                     <Route exact path="/campus/add" component={AddCampus} />
                     <Route exact path="/campus/edit/:name/:id" component={EditCampus} />
+                    {/*<Route exact path="/campus/:id component={SingleCampus} />*/}
                     <Route exact path="/students" component={StudentsListing} />
                     <Route exact path="/student/add" component={AddStudent}/>
                     <Route exact path="/students/:id" component={StudentContainer} />
                     <Route exact path="/student/edit/:name/:id" component={EditStudent} />
+                    <Route exact path="/studentcampus/:id" component={SingleStudentCampus} />
 
-                {/*    <Route exact path="/students/edit/:name/:id" component={EditStudent}/>*/}
 
                 </Switch>
             </div>
