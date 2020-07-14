@@ -73,7 +73,7 @@ const campusesReducers = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        addSuccessMsg: "Campus was edited!",
+        addSuccessMsg: "Student was edited!",
       };
     case ON_EDIT_SUCCESS:
       return {

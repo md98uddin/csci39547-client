@@ -8,10 +8,10 @@ import {
     FETCH_A_STUDENT,
     FETCH_ALL_STUDENTS,
     ADD_A_STUDENT,
-    REMOVE_A_STUDENT, UPDATE_STUDENT_TO_STATE,
+    REMOVE_A_STUDENT, UPDATE_STUDENT_TO_STATE, EDIT_A_STUDENT, CALL_API_TO_EDIT_STUDENT,
 } from "../types/studentTypes";
 import {
-    CALL_API_TO_EDIT_CAMPUS,
+    CALL_API_TO_EDIT_CAMPUS, EDIT_A_CAMPUS,
     FETCH_A_CAMPUS,
     UPDATE_CAMPUS_TO_STATE,
     UPDATE_CAMPUSES_TO_STATE
@@ -34,10 +34,9 @@ export const fetchStudent = () => {
     };
 };
 
-export const addStudent = (student) => {
+export const addStudent = () => {
     return {
         type: ADD_A_STUDENT,
-        payload: student
     };
 };
 
@@ -48,10 +47,9 @@ export const addStudentSuccess = () => {
 };
 
 
-export const removeStudent = (id) => {
+export const removeStudent = () => {
     return {
         type: REMOVE_A_STUDENT,
-        payload: id
     };
 };
 
@@ -69,9 +67,28 @@ export const updateAllStudentsToState = (students) => {
     };
 };
 
-export const updateStudentstoDb = () => {
+export const addStudenttoDb = () => {
     return {
-        type: CALL_API_TO_EDIT_CAMPUS,
+        type: CALL_API_TO_ADD_STUDENT,
+    }
+}
+
+export const editStudent = () => {
+    return {
+        type: EDIT_A_STUDENT,
+    };
+};
+
+export const updateStudenttoDb = () => {
+    return {
+        type: CALL_API_TO_EDIT_STUDENT,
+    };
+};
+
+export const removeStudentFromDb = () => {
+    return {
+        type: CALL_API_TO_REMOVE_STUDENT,
+
     };
 };
 
