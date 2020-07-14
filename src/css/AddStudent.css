@@ -1,0 +1,23 @@
+#add-form {
+    text-align: center;
+    margin-top: 15%;
+}
+
+#studentName {
+    width: 250px;
+    height: 40px;
+    border: solid;
+    border-width: 5px;
+    border-color: rebeccapurple;
+}
+
+#add-label {
+    font-size: 20px;
+    color: rebeccapurple;
+    letter-spacing: 2px;
+}
+
+#add-btn {
+    color: white;
+    margin-top: 2%;
+}

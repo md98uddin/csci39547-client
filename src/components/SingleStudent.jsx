@@ -25,6 +25,7 @@ const SingleStudent = (props) => {
 
                 </h5>
                 <p>email: {props.student.email}</p>
+                <p>{props.student.CampusId}</p>
                 <p className="card-text">gpa: {props.student.gpa}</p>
 
                     <button
