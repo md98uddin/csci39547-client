@@ -1,0 +1,41 @@
+#main {
+  text-align: center;
+  margin-left: 15%;
+  margin-top: 2%;
+  color: rebeccapurple;
+}
+
+.mr-3 {
+  width: 350px;
+  height: 275px;
+}
+
+#filter-container {
+  height: 230px;
+  margin-right: 200px;
+  margin-top: 10px;
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1f);
+  overflow-y: scroll;
+}
+
+#student-div {
+  width: 200px;
+  height: 100px;
+  margin-bottom: 125px;
+}
+
+#student-college-title {
+  margin-top: 8%;
+  font-size: 20px;
+  margin-right: 12%;
+}
+
+#view-card {
+  text-align: center;
+  width: 700px;
+  height: 200px;
+  border-color: black;
+  margin-left: 30px;
+}
