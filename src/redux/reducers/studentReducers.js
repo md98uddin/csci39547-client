@@ -12,15 +12,23 @@ import {
     UPDATE_STUDENT_TO_STATE,
     CALL_API_TO_ADD_STUDENT,
     CALL_API_TO_REMOVE_STUDENT,
-    CALL_API_TO_EDIT_STUDENT, EDIT_A_STUDENT,
+    CALL_API_TO_EDIT_STUDENT, EDIT_A_STUDENT, UPDATE_STUDENTS_CAMPUS, UPDATE_STUDENTS_CAMPUS_TO_STATE,
 } from "../types/studentTypes";
 
 import { fetchAllStudents, updateAllCampusesToState } from "../dispatches";
 import {
-    addStudent, addStudentSuccess, addStudenttoDb, editStudent,
+    addStudent,
+    addStudentSuccess,
+    addStudenttoDb,
+    editStudent,
     fetchStudent,
-    removeStudent, removeStudentFromDb,
-    updateAllStudentsToState, updateStudentsToState, updateStudenttoDb, updateStudentToState,
+    removeStudent,
+    removeStudentFromDb,
+    updateAllStudentsToState,
+    updateStudentsCampusToState,
+    updateStudentsToState,
+    updateStudenttoDb,
+    updateStudentToState,
 } from "../actions/studentsActions";
 
 import Axios from "axios";
@@ -40,6 +48,7 @@ const initialState = {
     isLoading: false,
     addSuccessMsg: null,
     student: null,
+    studentsCampus: null,
 };
 
 // THUNK CREATORS;
@@ -51,7 +60,7 @@ export const fetchStudentThunk = (id) => {
         Axios.get(`http://localhost:5000/students/${id}`).then((res) => {
             dispatch(updateStudentToState(res.data));
         });
-        dispatch(onFetchSuccess());
+        dispatch(addStudentSuccess());
     };
 };
 
@@ -61,6 +70,16 @@ export const fetchAllStudentsThunk = () => {
         Axios.get("http://localhost:5000/students").then((res) => {
             dispatch(updateAllStudentsToState(res.data));
         });
+    };
+};
+
+export const fetchAllStudentsCampusThunk = (id) => {
+    return function (dispatch) {
+        dispatch(fetchAllStudents());
+        Axios.get(`http://localhost:5000/students/find/${id}`).then((res) => {
+            dispatch(updateStudentsCampusToState(res.data));
+        });
+        dispatch(addStudentSuccess());
     };
 };
 
@@ -113,6 +132,12 @@ function AllStudentsReducer(state = initialState, action) {
                 student: action.payload,
                 isLoading: false,
             };
+        case UPDATE_STUDENTS_CAMPUS_TO_STATE:
+            return{
+                ...state,
+                studentsCampus: action.payload,
+                isLoading: false,
+            }
         case ON_ADD_SUCCESS:
             return {
                 ...state,
