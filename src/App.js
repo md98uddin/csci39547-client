@@ -11,31 +11,31 @@ import StudentContainer from "./components/StudentContainer";
 import SingleStudentCampus from "./components/SingleStudentCampus";
 import AddStudent from "./components/AddStudent";
 import ViewCampus from "./components/ViewCampus";
+import AddStudentToCampus from "./components/AddStudentToCampus";
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/campuses" component={CampusesListing} />
-          <Route exact path="/campuses/add" component={AddCampus} />
-          <Route exact path="/campuses/edit/:name/:id" component={EditCampus} />
-          {/*<Route exact path="/campus/:id component={SingleCampus} />*/}
-          <Route exact path="/students" component={StudentsListing} />
-          <Route exact path="/student/add" component={AddStudent} />
-          <Route exact path="/students/:id" component={StudentContainer} />
-          <Route exact path="/student/edit/:name/:id" component={EditStudent} />
-          <Route
-            exact
-            path="/studentcampus/:id"
-            component={SingleStudentCampus}
-          />
-        </Switch>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Navbar />
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/campuses" component={CampusesListing} />
+                    <Route exact path="/campus/add" component={AddCampus} />
+                    <Route exact path="/campus/edit/:name/:id" component={EditCampus} />
+                    {/*<Route exact path="/campus/:id component={SingleCampus} />*/}
+                    <Route exact path="/students" component={StudentsListing} />
+                    <Route exact path="/student/add" component={AddStudent}/>
+                    <Route exact path="/student/addStudentToCampus" component={AddStudentToCampus}/>
+                    <Route exact path="/students/:id" component={StudentContainer} />
+                    <Route exact path="/student/edit/:name/:id" component={EditStudent} />
+                    <Route exact path="/studentcampus/:id" component={SingleStudentCampus} />
+
+
+                </Switch>
+            </div>
+        );
+    }
 }
 
 export default App;
