@@ -8,7 +8,12 @@ import {
     FETCH_A_STUDENT,
     FETCH_ALL_STUDENTS,
     ADD_A_STUDENT,
-    REMOVE_A_STUDENT, UPDATE_STUDENT_TO_STATE, EDIT_A_STUDENT, CALL_API_TO_EDIT_STUDENT,
+    REMOVE_A_STUDENT,
+    UPDATE_STUDENT_TO_STATE,
+    EDIT_A_STUDENT,
+    CALL_API_TO_EDIT_STUDENT,
+    UPDATE_STUDENTS_CAMPUS,
+    UPDATE_STUDENTS_CAMPUS_TO_STATE,
 } from "../types/studentTypes";
 import {
     CALL_API_TO_EDIT_CAMPUS, EDIT_A_CAMPUS,
@@ -47,6 +52,7 @@ export const addStudentSuccess = () => {
 };
 
 
+
 export const removeStudent = () => {
     return {
         type: REMOVE_A_STUDENT,
@@ -63,6 +69,13 @@ export const updateStudentToState = (student) => {
 export const updateAllStudentsToState = (students) => {
     return {
         type: UPDATE_STUDENTS_TO_STATE,
+        payload: students,
+    };
+};
+
+export const updateStudentsCampusToState = (students) => {
+    return {
+        type: UPDATE_STUDENTS_CAMPUS_TO_STATE,
         payload: students,
     };
 };
