@@ -5,14 +5,14 @@ import "../css/AddStudent.css";
 import {addStudent} from "../redux/actions/studentsActions";
 import {addStudentThunk} from "../redux/reducers/studentReducers";
 
-class AddStudent extends Component{
-  state = {
-      firstname: null,
-      lastname: null,
-      email: null,
-      gpa: null,
-      CampusId: null,
-  };
+class AddStudentToCampus extends Component{
+    state = {
+        firstname: null,
+        lastname: null,
+        email: null,
+        gpa: null,
+        CampusId: this.props.location.state.campusid,
+    };
 
     changeFirstName = (e) => {
         var text = e.target.value;
@@ -42,44 +42,26 @@ class AddStudent extends Component{
         });
     };
 
-    changeCampusID = (e) => {
-        var text = e.target.value;
-        this.setState({
-            CampusId: text,
-        });
-    };
 
     submitStudent = async (firstname, lastname, email, gpa, CampusId) => {
-       let filter = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
+        this.setState({
+            firstname: null,
+            lastname: null,
+            email: null,
+            gpa: null,
+            CampusId: null,
+        });
 
-        if(firstname == null || lastname == null || email == null
-            || gpa == null || CampusId == null){
-            alert("incomplete");
-        }
-        else if(!email.match('^\S+@\S+$')) {
-            alert("wrong email format");
+        var studentObj = {
+            first_name: firstname,
+            last_name: lastname,
+            email: email,
+            gpa: gpa,
+            CampusId: CampusId,
+            image_url: "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
+        };
 
-        }
-        else {
-            this.setState({
-                firstname: null,
-                lastname: null,
-                email: null,
-                gpa: null,
-                CampusId: null,
-            });
-
-            var studentObj = {
-                first_name: firstname,
-                last_name: lastname,
-                email: email,
-                gpa: gpa,
-                CampusId: CampusId,
-                image_url: "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
-            };
-
-            await this.props.AddStudent(studentObj);
-        }
+        await this.props.AddStudent(studentObj);
     };
 
 
@@ -108,10 +90,7 @@ class AddStudent extends Component{
                 <br />
                 <input type="text" id="studentName" onChange={this.changeGPA} />
                 <br />
-                <label id="add-label">CampusID</label>
-                <br />
-                <input type="text" id="studentName" onChange={this.changeCampusID} />
-                <br />
+
 
                 <button
                     className="btn"
@@ -149,4 +128,4 @@ function mapDispatch(dispatch){
 
 }
 
-export default connect(mapState, mapDispatch)(AddStudent);
+export default connect(mapState, mapDispatch)(AddStudentToCampus);

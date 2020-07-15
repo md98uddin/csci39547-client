@@ -10,6 +10,7 @@ import StudentsListing from "./components/StudentsListing";
 import StudentContainer from "./components/StudentContainer";
 import SingleStudentCampus from "./components/SingleStudentCampus";
 import AddStudent from "./components/AddStudent";
+import AddStudentToCampus from "./components/AddStudentToCampus";
 
 class App extends Component {
     render() {
@@ -24,6 +25,7 @@ class App extends Component {
                     {/*<Route exact path="/campus/:id component={SingleCampus} />*/}
                     <Route exact path="/students" component={StudentsListing} />
                     <Route exact path="/student/add" component={AddStudent}/>
+                    <Route exact path="/student/addStudentToCampus" component={AddStudentToCampus}/>
                     <Route exact path="/students/:id" component={StudentContainer} />
                     <Route exact path="/student/edit/:name/:id" component={EditStudent} />
                     <Route exact path="/studentcampus/:id" component={SingleStudentCampus} />

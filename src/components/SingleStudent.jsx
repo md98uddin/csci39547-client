@@ -16,7 +16,7 @@ class SingleStudent extends Component  {
     return this.props.student ? (
 
         <div className="container" style={{textAlign: "center"}}>
-            <h1 style={{color: "rebeccapurple", textAlign: "center"}}>Single Student</h1>,
+            <h1 style={{color: "rebeccapurple", textAlign: "center"}}>Single Student</h1>
 
             <div className="card" style={{margin: "auto"}}>
                 <img

@@ -4,6 +4,7 @@ import {fetchAllStudentsCampusThunk, fetchStudentThunk, removeStudentThunk} from
 import {FetchACampus} from "../redux/actions/campusesActions";
 import {Link} from "react-router-dom";
 import Loader from "./commons/Loader";
+import EmptyDataMessage from "./commons/EmptyDataMessage";
 
 
 class SingleStudentCampus extends Component {
@@ -24,7 +25,7 @@ class SingleStudentCampus extends Component {
         return !this.props.isLoading && this.props.campus && this.props.studentsCampus ? (
 
             <div className="container" style={{ textAlign: "center" }}>
-                <h1 style={{ color: "rebeccapurple", textAlign: "center" }}>Single Campus</h1>,
+                <h1 style={{ color: "rebeccapurple", textAlign: "center" }}>Single Campus</h1>
 
                 <div className="card"  style={{ margin: "auto" }}>
                     <img
@@ -61,8 +62,22 @@ class SingleStudentCampus extends Component {
                     </div>
                 </div>
 
+                <Link to={{
+                    pathname: '/student/addStudentToCampus',
+                    state: {
+                        campusid: this.props.campus.id
+                    }
+                }}>
+                    <button
+                        className="btn-info"
+                        id="add-btn">
+                        ADD STUDENT
+                    </button>
+                </Link>
+
                 <div className="grid container" id="students-listings">
-                    {this.props.studentsCampus.map((student) => (
+                    {this.props.studentsCampus.length > 0 ? (
+                        this.props.studentsCampus.map((student) => (
                         <div className="card" key={student.id}>
                             <img
                                 src={student.image_url}
@@ -102,7 +117,10 @@ class SingleStudentCampus extends Component {
                                 </button>
                             </div>
                         </div>
-                    ))}
+                    ))
+                    ) : (
+                        <EmptyDataMessage message="There are no students registered in this database."/>
+                    )}
                 </div>
 
             </div>
