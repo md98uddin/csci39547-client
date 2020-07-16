@@ -1,5 +1,5 @@
 import {
-
+//action types needed for action creators
     START_FETCHING_STUDENTS,
     UPDATE_STUDENTS_TO_STATE,
     CALL_API_TO_ADD_STUDENT,
@@ -23,6 +23,10 @@ import {
 } from "../types/campusesTypes";
 import Axios from "axios";
 import {fetchAllCampuses, updateAllCampusesToState} from "./campusesActions";
+
+
+
+//action creators
 
 
 export const fetchAllStudents = () => {

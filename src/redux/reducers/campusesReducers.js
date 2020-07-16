@@ -15,6 +15,7 @@ import {
   ON_FETCH_SUCCESS,
 } from "../types/campusesTypes";
 
+//initial state for campus data
 const initialState = {
   campuses: null,
   currentCampus: null,

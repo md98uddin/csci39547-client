@@ -11,6 +11,7 @@ import Loader from "./commons/Loader";
 import EmptyDataMessage from "./commons/EmptyDataMessage";
 import { Link } from "react-router-dom";
 
+//main component that shows all campuses
 class CampusesListing extends Component {
   componentDidMount() {
     this.props.onFetchCampuses();

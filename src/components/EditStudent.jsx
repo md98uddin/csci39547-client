@@ -4,6 +4,7 @@ import "../css/EditCampus.css";
 import Loader from "./commons/Loader";
 import { EditAStudentThunk } from "../redux/reducers/studentReducers";
 
+//component to edit a student
 class EditStudent extends Component {
   state = {
     first_name: null,
@@ -14,6 +15,8 @@ class EditStudent extends Component {
     image_url: "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
   };
 
+
+// these functions below are called when written in input
   changeFirstName = (e) => {
     var text = e.target.value;
     this.setState({
@@ -58,6 +61,7 @@ class EditStudent extends Component {
     CampusId,
     image_url
   ) => {
+    //checks to make sure correct data is entered
     if (
       first_name == null ||
       last_name == null ||
@@ -75,6 +79,7 @@ class EditStudent extends Component {
     ) {
       alert("wrong email format");
     } else {
+
       const student = {
         first_name: first_name,
         last_name: last_name,
@@ -148,6 +153,7 @@ class EditStudent extends Component {
         <button
           className="btn btn-primary"
           onClick={() =>
+            //data to send from input
             this.onEditSubmit(
               this.props.student.id,
               this.state.first_name,

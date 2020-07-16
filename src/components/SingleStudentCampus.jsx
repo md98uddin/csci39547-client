@@ -10,8 +10,11 @@ import { Link } from "react-router-dom";
 import Loader from "./commons/Loader";
 import EmptyDataMessage from "./commons/EmptyDataMessage";
 
+//component that shows a single campus when clicked from student view
+// and shows all students for that campus
 class SingleStudentCampus extends Component {
   componentDidMount() {
+    //fetch campus when page is rendered
     this.props.fetchCampus(this.props.match.params.id);
     this.props.fetchStudentsCampus(this.props.match.params.id);
   }
@@ -49,6 +52,7 @@ class SingleStudentCampus extends Component {
               description: {this.props.campus.description}
             </p>
 
+//link to add a student for specific campus when add button is pressed
             <Link
               to={{
                 pathname: "/student/addStudentToCampus",
@@ -90,6 +94,7 @@ class SingleStudentCampus extends Component {
                     </Link>
                   </h5>
 
+                     //link to edit a student
                   <Link
                     to={`/student/edit/${student.first_name.replace("", "&")}/${
                       student.id
@@ -98,6 +103,7 @@ class SingleStudentCampus extends Component {
                     <button
                       className="btn-info"
                       id="edit-btn"
+                      //get student data to edit
                       onClick={() => this.props.FetchAStudent(student.id)}
                     >
                       EDIT STUDENT
@@ -107,6 +113,7 @@ class SingleStudentCampus extends Component {
                   <button
                     className="btn-danger"
                     id="delete-btn"
+                    //remove student when delete button is pressed
                     onClick={() => this.removeStudent(student.id)}
                   >
                     DELETE STUDENT

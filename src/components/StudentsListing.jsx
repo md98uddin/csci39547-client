@@ -4,14 +4,18 @@ import Students from "./Students";
 import { fetchAllStudentsThunk } from "../redux/reducers/studentReducers";
 import Loader from "./commons/Loader";
 
+//main component to show all students
 class StudentListings extends Component {
   componentDidMount() {
+    // thunk that fetches all the students from the database
     this.props.FetchAllStudentsThunk();
   }
 
   render() {
+    //only return if students isnt empty
     return this.props.allStudents ? (
       <Students
+      //props needed in Students component
         students={this.props.allStudents}
         isLoading={this.props.isLoading}
         successMsg={this.props.successMsg}
@@ -26,6 +30,7 @@ class StudentListings extends Component {
 
 function mapState(state) {
   return {
+    //get data from state
     allStudents: state.Students.students,
     isLoading: state.Students.isLoading,
     currentStudent: state.Students.currentStudent,
@@ -35,12 +40,12 @@ function mapState(state) {
 
 function mapDispatch(dispatch) {
   return {
-    // fetchAllStudents: () => dispatch(fetchAllStudentsThunk()),
-    // removeAStudent: (id) => dispatch(removeStudentThunk(id))
+    // dispatch thunk to get all students
     FetchAllStudentsThunk: () => {
       dispatch(fetchAllStudentsThunk());
     },
   };
 }
 
+//connect state and dispatch to this component
 export default connect(mapState, mapDispatch)(StudentListings);
