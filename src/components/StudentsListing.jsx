@@ -10,8 +10,6 @@ class StudentListings extends Component {
   }
 
   render() {
-    console.log("students", this.props.allStudents);
-
     return this.props.allStudents ? (
       <Students
         students={this.props.allStudents}

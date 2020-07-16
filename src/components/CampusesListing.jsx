@@ -27,7 +27,6 @@ class CampusesListing extends Component {
   };
 
   render() {
-    console.log("props", this.props);
     const { campuses, successMsg, isLoading } = this.props;
 
     return campuses && !isLoading ? (

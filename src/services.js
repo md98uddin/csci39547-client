@@ -7,7 +7,6 @@ export function getStudentsByCampus(arr, id) {
     }
 
     "students array", filteredStudents;
-    console.log("id", id);
 
     return filteredStudents;
   }

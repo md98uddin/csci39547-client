@@ -25,14 +25,10 @@ class EditCampus extends Component {
       image_url: obj.image_url,
       description: obj.description,
     };
-    console.log("campus", campus);
     await this.props.EditACampus(id, campus);
     setTimeout(() => window.location.assign("/campuses"), 500);
   };
   render() {
-    console.log("props on edit", this.props.currentCampus);
-    console.log("state", this.state);
-
     return this.props.currentCampus ? (
       <div className="container" id="edit-main">
         {this.props.successMsg && (

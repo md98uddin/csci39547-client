@@ -22,7 +22,6 @@ class AddStudent extends Component {
   };
 
   submitStudent = async (firstname, lastname, email, gpa, CampusId) => {
-    console.log("state", this.state);
     if (
       firstname == null ||
       lastname == null ||
