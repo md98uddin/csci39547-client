@@ -6,8 +6,6 @@ export function getStudentsByCampus(arr, id) {
       if (arr[i].CampusId == id) filteredStudents.push(arr[i]);
     }
 
-    "students array", filteredStudents;
-
     return filteredStudents;
   }
 
