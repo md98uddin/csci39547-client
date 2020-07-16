@@ -4,6 +4,7 @@ import { addACampus } from "../redux/actions/campusesActions";
 import "../css/AddCampus.css";
 import Loader from "./commons/Loader";
 
+//component to add a campus
 class AddCampus extends Component {
   state = { campusName: null };
 

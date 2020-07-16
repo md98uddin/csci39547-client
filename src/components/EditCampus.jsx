@@ -4,6 +4,7 @@ import "../css/EditCampus.css";
 import { EditACampus } from "../redux/actions/campusesActions";
 import Loader from "./commons/Loader";
 
+//component to edit a campus
 class EditCampus extends Component {
   state = {
     campusName: null,

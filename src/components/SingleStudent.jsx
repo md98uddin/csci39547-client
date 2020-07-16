@@ -8,8 +8,11 @@ import {
 } from "../redux/reducers/studentReducers";
 import { connect } from "react-redux";
 
+//component for a single student
 class SingleStudent extends Component {
   render() {
+
+    //only return this if student data is available
     return this.props.student ? (
       <div className="container" style={{ textAlign: "center" }}>
         <h1 style={{ color: "rebeccapurple", textAlign: "center" }}>

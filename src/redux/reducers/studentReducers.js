@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//action types needed
 import {
     START_FETCHING_STUDENTS,
     FETCH_A_STUDENT,
@@ -42,18 +43,21 @@ import {
 } from "../actions/campusesActions";
 import {ON_EDIT_SUCCESS} from "../types/studentTypes";
 
-
+//initial state for student data
 const initialState = {
+  //all of the students
     students: null,
     isLoading: false,
     addSuccessMsg: null,
+    //a specific student
     student: null,
+    //campus of a particular student
     studentsCampus: null,
 };
 
 // THUNK CREATORS;
 
-
+//gets a student from database using a specific id
 export const fetchStudentThunk = (id) => {
     return (dispatch) => {
         dispatch(fetchStudent());
@@ -64,6 +68,7 @@ export const fetchStudentThunk = (id) => {
     };
 };
 
+//gets all students from the database
 export const fetchAllStudentsThunk = () => {
     return function (dispatch) {
         dispatch(fetchAllStudents());
@@ -73,6 +78,7 @@ export const fetchAllStudentsThunk = () => {
     };
 };
 
+//gets all students for a specific campus
 export const fetchAllStudentsCampusThunk = (id) => {
     return function (dispatch) {
         dispatch(fetchAllStudents());
@@ -83,6 +89,7 @@ export const fetchAllStudentsCampusThunk = (id) => {
     };
 };
 
+//adds a student to the database
 export const addStudentThunk = (obj) => {
     return (dispatch) => {
         dispatch(addStudent());
@@ -93,6 +100,7 @@ export const addStudentThunk = (obj) => {
     };
 };
 
+//removes a student from the databse
 export const removeStudentThunk = (id) => {
     return function (dispatch) {
         dispatch(removeStudent());
@@ -102,6 +110,7 @@ export const removeStudentThunk = (id) => {
     };
 };
 
+//edits a student from the database
 export const EditAStudentThunk = (id, obj) => {
     return (dispatch) => {
         dispatch(editStudent());
@@ -112,6 +121,8 @@ export const EditAStudentThunk = (id, obj) => {
     };
 };
 
+
+//reducer that modifies the state for students
 function AllStudentsReducer(state = initialState, action) {
     switch (action.type) {
         case START_FETCHING_STUDENTS:

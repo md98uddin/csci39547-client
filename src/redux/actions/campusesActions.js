@@ -1,4 +1,5 @@
 import {
+  //action types needed for action creators
   START_FETCHING_CAMPUSES,
   UPDATE_CAMPUSES_TO_STATE,
   FETCH_A_CAMPUS,

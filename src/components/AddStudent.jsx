@@ -5,6 +5,8 @@ import "../css/AddStudent.css";
 import { addStudent } from "../redux/actions/studentsActions";
 import { addStudentThunk } from "../redux/reducers/studentReducers";
 
+
+//component to add a student
 class AddStudent extends Component {
   state = {
     firstname: null,
@@ -15,6 +17,7 @@ class AddStudent extends Component {
   };
 
   onChange = (e) => {
+    //gets data inputed
     var value = e.target.value;
     this.setState({
       [e.target.id]: value,
@@ -22,6 +25,7 @@ class AddStudent extends Component {
   };
 
   submitStudent = async (firstname, lastname, email, gpa, CampusId) => {
+    //make sure correct data is inputed
     if (
       firstname == null ||
       lastname == null ||
@@ -47,6 +51,7 @@ class AddStudent extends Component {
         CampusId: null,
       });
 
+// new student object sent to database
       var studentObj = {
         first_name: firstname,
         last_name: lastname,
@@ -92,6 +97,7 @@ class AddStudent extends Component {
           className="btn"
           id="add-btn"
           onClick={() =>
+            //data inputed
             this.submitStudent(
               this.state.firstname,
               this.state.lastname,
