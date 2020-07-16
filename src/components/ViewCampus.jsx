@@ -19,7 +19,6 @@ class ViewCampus extends Component {
   };
 
   render() {
-    console.log("students", this.props.students);
     return this.props.currentCampus ? (
       <div className="view-campus" id="main">
         <div className="media view-card" id="view-card">
