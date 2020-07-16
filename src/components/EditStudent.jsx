@@ -50,18 +50,30 @@ class EditStudent extends Component {
     };
 
     onEditSubmit = async (id, first_name, last_name, email, gpa, CampusId, image_url) => {
-        const student = {
-            first_name: first_name,
-            last_name: last_name,
-            email: email,
-            gpa: gpa,
-            CampusId: CampusId,
-            image_url: image_url,
+        if(first_name == null || last_name == null || email == null
+            || gpa == null || CampusId == null){
+            alert("incomplete");
+        }
+        else if(!email.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%" +
+            "&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-" +
+            "9](?:[a-z0-9-]*[a-z0-9])?")) {
+            alert("wrong email format");
 
-        };
+        }
+        else {
+            const student = {
+                first_name: first_name,
+                last_name: last_name,
+                email: email,
+                gpa: gpa,
+                CampusId: CampusId,
+                image_url: image_url,
 
-        await this.props.EditAStudent(id, student);
-        setTimeout(() => window.location.assign("/students"), 500);
+            };
+
+            await this.props.EditAStudent(id, student);
+            setTimeout(() => window.location.assign("/students"), 500);
+        }
     };
     render() {
 
