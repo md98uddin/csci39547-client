@@ -26,6 +26,7 @@ class App extends Component {
                     {/*<Route exact path="/campus/:id component={SingleCampus} />*/}
                     <Route exact path="/students" component={StudentsListing} />
                     <Route exact path="/student/add" component={AddStudent}/>
+                    <Route exact path="/campuses/:name/:id" component={ViewCampus} />
                     <Route exact path="/student/addStudentToCampus" component={AddStudentToCampus}/>
                     <Route exact path="/students/:id" component={StudentContainer} />
                     <Route exact path="/student/edit/:name/:id" component={EditStudent} />
