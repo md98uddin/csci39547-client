@@ -1,47 +1,47 @@
 #no-campus {
-  text-align: center;
-  margin-top: 12%;
-  color: rgb(92, 13, 92);
-  font-size: 40px;
-  letter-spacing: 3px;
-  width: 1000px;
-  margin-left: 40px;
+    text-align: center;
+    margin-top: 12%;
+    color: rgb(92, 13, 92);
+    font-size: 40px;
+    letter-spacing: 3px;
+    width: 1000px;
+    margin-left: 40px;
 }
 
 #success-msg {
-  color: rebeccapurple;
-  font-size: 20px;
+    color: rebeccapurple;
+    font-size: 20px;
 }
 
 #students-listings {
-  margin-top: 2%;
+    margin-top: 2%;
 }
 
 .grid {
-  width: 120px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  margin-bottom: 12px;
+    width: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 12px;
 }
 
 .card {
-  height: 300px;
-  width: 350px;
+    height: 325px;
+    width: 350px;
 }
 
 #add-btn {
-  background-color: rgb(4, 87, 4);
+    background-color: rgb(4, 87, 4);
 }
 
 #edit-btn {
-  margin: 5px;
-  color: white;
-  background-color: rgb(92, 13, 92);
+    margin: 5px;
+    color: white;
+    background-color: rgb(92, 13, 92);
 }
 
 #delete-btn {
-  margin: 5px;
-  color: white;
-  background-color: blueviolet;
+    margin: 5px;
+    color: white;
+    background-color: blueviolet;
 }

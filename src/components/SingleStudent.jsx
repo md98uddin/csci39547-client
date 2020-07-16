@@ -28,16 +28,16 @@ class SingleStudent extends Component  {
                     height={125}
                 />
                 <div className="card-body">
-                    <h5 className="card-title">
+                    <h5 className="card-title" style={{ color: "rebeccapurple" }}>
 
                         {this.props.student.first_name + " " + this.props.student.last_name}
 
                     </h5>
-                    <p>email: {this.props.student.email}</p>
+                    <p style={{ color: "rebeccapurple" }}>email: {this.props.student.email}</p>
                     <Link to={`/studentcampus/${this.props.student.CampusId}`}>
                         <p>CampusId: {this.props.student.CampusId}</p>
                     </Link>
-                    <p className="card-text">gpa: {this.props.student.gpa}</p>
+                    <p className="card-text" style={{ color: "rebeccapurple" }}>gpa: {this.props.student.gpa}</p>
 
 
                     <Link

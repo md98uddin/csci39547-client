@@ -36,44 +36,35 @@ class SingleStudentCampus extends Component {
                         height={125}
                     />
                     <div className="card-body">
-                        <h5 className="card-title">
+                        <h5 className="card-title" style={{ color: "rebeccapurple" }}>
 
                             {this.props.campus.campus_name}
 
                         </h5>
-                        <p>address: {this.props.campus.campus_address}</p>
-                        <p className="card-text">description: {this.props.campus.description}</p>
+                        <p style={{ color: "rebeccapurple" }}>address: {this.props.campus.campus_address}</p>
+                        <p className="card-text" style={{ color: "rebeccapurple" }}>description: {this.props.campus.description}</p>
 
-                        <button
-                            className="btn-info"
-                            id="edit-btn"
-                            //   onClick={() => this.props.FetchACampus(student.id)}
-                        >
-                            EDIT CAMPUS
-                        </button>
 
-                        <button
-                            className="btn-danger"
-                            id="delete-btn"
-                           //  onClick={() => this.removeCampus(student.id)}
-                        >
-                            DELETE CAMPUS
-                        </button>
+                        <Link to={{
+                            pathname: '/student/addStudentToCampus',
+                            state: {
+                                campusid: this.props.campus.id
+                            }
+                        }}>
+                            <button
+                                className="btn-info"
+                                id="add-btn">
+                                ADD STUDENT
+                            </button>
+                        </Link>
+
                     </div>
                 </div>
 
-                <Link to={{
-                    pathname: '/student/addStudentToCampus',
-                    state: {
-                        campusid: this.props.campus.id
-                    }
-                }}>
-                    <button
-                        className="btn-info"
-                        id="add-btn">
-                        ADD STUDENT
-                    </button>
-                </Link>
+
+                <h1 id="student-college-title" style={{textAlign: "center"}} style={{ color: "rebeccapurple" }}>
+                    Students Attending {this.props.campus.campus_name}{" "}
+                </h1>
 
                 <div className="grid container" id="students-listings">
                     {this.props.studentsCampus.length > 0 ? (
@@ -117,6 +108,7 @@ class SingleStudentCampus extends Component {
                                 </button>
                             </div>
                         </div>
+
                     ))
                     ) : (
                         <EmptyDataMessage message="There are no students registered in this database."/>

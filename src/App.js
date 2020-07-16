@@ -10,8 +10,8 @@ import StudentsListing from "./components/StudentsListing";
 import StudentContainer from "./components/StudentContainer";
 import SingleStudentCampus from "./components/SingleStudentCampus";
 import AddStudent from "./components/AddStudent";
-import ViewCampus from "./components/ViewCampus";
 import AddStudentToCampus from "./components/AddStudentToCampus";
+import ViewCampus from "./components/ViewCampus";
 
 class App extends Component {
     render() {

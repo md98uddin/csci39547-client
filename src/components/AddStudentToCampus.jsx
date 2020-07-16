@@ -44,24 +44,37 @@ class AddStudentToCampus extends Component{
 
 
     submitStudent = async (firstname, lastname, email, gpa, CampusId) => {
-        this.setState({
-            firstname: null,
-            lastname: null,
-            email: null,
-            gpa: null,
-            CampusId: null,
-        });
 
-        var studentObj = {
-            first_name: firstname,
-            last_name: lastname,
-            email: email,
-            gpa: gpa,
-            CampusId: CampusId,
-            image_url: "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
-        };
+        if(firstname == null || lastname == null || email == null
+            || gpa == null || CampusId == null){
+            alert("incomplete");
+        }
+        else if(!email.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%" +
+            "&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-" +
+            "9](?:[a-z0-9-]*[a-z0-9])?")) {
+            alert("wrong email format");
 
-        await this.props.AddStudent(studentObj);
+        }
+        else {
+            this.setState({
+                firstname: null,
+                lastname: null,
+                email: null,
+                gpa: null,
+                CampusId: null,
+            });
+
+            var studentObj = {
+                first_name: firstname,
+                last_name: lastname,
+                email: email,
+                gpa: gpa,
+                CampusId: CampusId,
+                image_url: "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
+            };
+
+            await this.props.AddStudent(studentObj);
+        }
     };
 
 

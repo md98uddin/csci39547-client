@@ -50,13 +50,14 @@ class AddStudent extends Component{
     };
 
     submitStudent = async (firstname, lastname, email, gpa, CampusId) => {
-       let filter = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
 
         if(firstname == null || lastname == null || email == null
             || gpa == null || CampusId == null){
             alert("incomplete");
         }
-        else if(!email.match('^\S+@\S+$')) {
+        else if(!email.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%" +
+            "&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-" +
+            "9](?:[a-z0-9-]*[a-z0-9])?")) {
             alert("wrong email format");
 
         }
